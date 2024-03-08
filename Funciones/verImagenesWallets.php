@@ -1,4 +1,5 @@
 <?php
+//verImagenesWallets.php
 function getUserImages($userId, $pdo) {
     $sql = "SELECT imagenusdt, imagenbtc FROM usuarios WHERE user_id = ?";
     $stmt = $pdo->prepare($sql);

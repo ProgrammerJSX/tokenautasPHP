@@ -1,4 +1,5 @@
 <?php
+//verWalletUSDT.php
 function obtenerValorWalletUSDT($idUsuario, $pdo) {
     $stmt = $pdo->prepare("SELECT walletUSDT FROM usuarios WHERE user_id = ?");
     $stmt->execute([$idUsuario]);

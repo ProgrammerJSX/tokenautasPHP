@@ -5,11 +5,19 @@
 $arrayusdt = [
     ['imagen' => 'Assets/src/imagen_usdt_1.png', 'palabraSecreta' => 'secreto_usdt_1'],
     ['imagen' => 'Assets/src/imagen_usdt_2.png', 'palabraSecreta' => 'secreto_usdt_2'],
+    ['imagen' => 'Assets/src/1.png', 'palabraSecreta' => 'secreto_usdt_3'],
+    ['imagen' => 'Assets/src/2.png', 'palabraSecreta' => 'secreto_usdt_4'],
+    ['imagen' => 'Assets/src/3.jpg', 'palabraSecreta' => 'secreto_usdt_5'],
+    ['imagen' => 'Assets/src/4.jpg', 'palabraSecreta' => 'secreto_usdt_6'],
 ];
 
 $arraybtc = [
     ['imagen' => 'Assets/src/imagen_btc_1.png', 'palabraSecreta' => 'secreto_btc_1'],
     ['imagen' => 'Assets/src/imagen_btc_2.png', 'palabraSecreta' => 'secreto_btc_2'],
+    ['imagen' => 'Assets/src/5.jpg', 'palabraSecreta' => 'secreto_btc_3'],
+    ['imagen' => 'Assets/src/6.jpg', 'palabraSecreta' => 'secreto_btc_4'],
+    ['imagen' => 'Assets/src/7.jpg', 'palabraSecreta' => 'secreto_btc_5'],
+    ['imagen' => 'Assets/src/8.jpg', 'palabraSecreta' => 'secreto_btc_6'],
 ];
 
 

@@ -1,4 +1,5 @@
 <?php
+//verWalletBTC.php
 function obtenerValorWalletBTC($idUsuario, $pdo) {
     $stmt = $pdo->prepare("SELECT walletBTC FROM usuarios WHERE user_id = ?");
     $stmt->execute([$idUsuario]);
