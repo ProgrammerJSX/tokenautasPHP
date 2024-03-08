@@ -29,7 +29,7 @@ $imagenBTC = isset($imagenesUsuario['imagenbtc']) ? $imagenesUsuario['imagenbtc'
 <head>
     <meta charset="UTF-8">
     <title>Detalle del Usuario</title>
-    <!-- Agrega aquí tu archivo de estilo si tienes uno -->
+    <!-- Agrega aquí tu archivo de estilo si tienes uno. -->
 </head>
 <body>
     <div>
