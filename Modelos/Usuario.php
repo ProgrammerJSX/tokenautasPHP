@@ -38,4 +38,15 @@ class Usuario {
             return false; // Las credenciales son incorrectas
         }
     }
+
+    public function obtenerUsuarioPorNombreUsuario($username) {
+        // Preparar la consulta SQL para buscar el usuario
+        $sql = "SELECT * FROM usuarios WHERE username = ?";
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
+
+        return $user; // Devuelve todos los detalles del usuario
+    }
 }

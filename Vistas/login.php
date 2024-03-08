@@ -15,7 +15,7 @@ if (isset($_SESSION['mensaje'])) {
     unset($_SESSION['mensaje']);
 }
 ?>
-<form action="../Controladores/UsuarioControlador.php" method="post">
+<form action="../Controladores/LoginControlador.php" method="post">
     <div>
         <label for="username">Nombre de usuario:</label>
         <input type="text" name="username" id="username" required>
