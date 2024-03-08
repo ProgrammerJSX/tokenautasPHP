@@ -1,32 +1,32 @@
-Estructura de directorios del proyecto
+# Estructura de Directorios del Proyecto 📁
 
 proyecto/
+├── 📄 conexion.php
+├── 📄 index.php
 │
-├── conexion.php
-├── index.php
+├── 📂 Modelos/
+│ ├── 📄 Usuario.php
+│ └── ...
 │
-├── Modelos/
-│   ├── Usuario.php
-│   └── ...
+├── 📂 Vistas/
+│ ├── 📄 login.php
+│ ├── 📄 registro.php
+│ └── 📄 dashboard.php
 │
-├── Vistas/
-│   ├── login.php
-│   ├── registro.php
-│   └── dashboard.php
+├── 📂 Controladores/
+│ ├── 📄 RegistroControlador.php
+│ ├── 📄 LoginControlador.php
+│ └── ...
 │
-├── Controladores/
-│   ├── UsuarioControlador.php
-│   └── ...
+├── 📂 Funciones/
+│ ├── 📄 verImagenesWallets.php
+│ ├── 📄 verWalletBTC.php
+│ ├── 📄 verWalletUSDT.php
+│ └── 📄 automatizacionIMG.php
 │
-├── Funciones/
-│   ├── verImagenesWallets.php
-│   ├── verWalletBTC.php
-│   ├── verWalletUSDT.php
-│   └── automatizacionIMG.php
-│
-└── assets/
-    └── src/
-        ├── imagen_usdt_1.jpg
-        ├── imagen_usdt_2.jpg
-        ├── imagen_btc_1.jpg
-        └── imagen_btc_2.jpg
+└── 📂 assets/
+└── 📂 src/
+├── 🖼️ imagen_usdt_1.jpg
+├── 🖼️ imagen_usdt_2.jpg
+├── 🖼️ imagen_btc_1.jpg
+└── 🖼️ imagen_btc_2.jpg
