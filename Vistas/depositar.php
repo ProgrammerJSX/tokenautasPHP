@@ -139,37 +139,38 @@ function mostrarSeccion(seccionId) {
         <div class="sidebar__list">
           <h3 class="sidebar__title">
 
-
+  <!--=============== Inicio : dashboard.php===============-->
                     <a href="./dashboard.php" class="sidebar__link">
-
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Inicio</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Inicio</span></a>
 
 
 
-
+  <!--=============== Retirar: retirar.php ===============-->
           <a href="./retirar.php" class="sidebar__link">
-
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Retirar</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Retirar</span></a>
 
+  <!--=============== Depositar: depositar.php ===============-->
+            <a href="./depositar.php"  class="sidebar__link">
+  <!--===============  ===============-->
+<span class="sidebar__link-name" style="font-size: 12px;">Depositar</span>
+<span class="sidebar__link-floating" style="font-size: 12px;">Depositar</span></a>
 
-          <a hhref="./depositar.php"  class="sidebar__link">
 
-            <span class="sidebar__link-name" style="font-size: 12px;">Depositar</span>
-            <span class="sidebar__link-floating" style="font-size: 12px;">Depositar</span></a>
-
-
-
-          <a href="javascript:void(0);" onclick="mostrarSeccion('bancos-registrados')" class="sidebar__link">
-
+  <!--=============== Mis bancos:  misbancos.php===============-->
+  <a href="./misbancos.php"  class="sidebar__link">
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Mis Bancos</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Mis Bancos</span>
           </a>
 
 
-
-          <ahref="javascript:void(0);" onclick="mostrarSeccion('registrar-bancos')" class="sidebar__link">
+  <!--=============== Registrar Bancos:  registrarBancos.php===============-->
+  <a href="./registrarBancos.php"  class="sidebar__link">
+  <!--===============  ===============-->
 
             <span class="sidebar__link-name" style="font-size: 12px;">Registrar Bancos</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Registar Bancos</span>
@@ -188,34 +189,20 @@ function mostrarSeccion(seccionId) {
 
       </div>
 
-      <h3 class="sidebar__title">
-        <span>Historial</span>
-      </h3>
+
 
       <div class="sidebar__list">
-        <a href="javascript:void(0);" onclick="mostrarSeccion('historial-retiro')" class="sidebar__link">
 
+
+  <!--=============== Historial de retiro:  historialderetiro.php===============-->
+  <a href="./historialderetiro.php"  class="sidebar__link">
+  <!--===============  ===============-->
           <span class="sidebar__link-name" style="font-size: 12px;">Historial de Retiro</span>
           <span class="sidebar__link-floating" style="font-size: 12px;">Historial de Retiro</span>
         </a>
 
 
 
-
-
-
-
-
-
-
-
-
-
-        <!--===============
-                  <a href="javascript:void(0);" class="sidebar__link" onclick="mostrarSeccion('historial-deposito')" >
-                    <span class="sidebar__link-name" style="font-size: 12px;">Historial Deposito</span>
-                    <span class="sidebar__link-floating" style="font-size: 12px;">Historial Deposito</span></a>
-                 ===============-->
 
         <h3 class="sidebar__title">
           <span>Usuario</span>
@@ -231,6 +218,8 @@ function mostrarSeccion(seccionId) {
 
   </nav>
   </div>
+
+  
 
   <!--=============== MAIN ===============-->
   <!--=============== MAIN ===============-->
@@ -684,7 +673,7 @@ function mostrarSeccion(seccionId) {
 
 
 
-<a style="position:relative ;" href="javascript:void(0);" onclick="mostrarSeccion('plataformas')" class="sidebar__link">
+<a style="position:relative ;" href="./zonabitcoin.php" class="sidebar__link">
   <div class="image-container" style="position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; animation: pulse 2s infinite;">
     <div style="position: absolute; width: 100%; height: 100%; background: rgba(255, 165, 0, 0.5); backdrop-filter: blur(10px);"></div>
    
@@ -707,7 +696,7 @@ function mostrarSeccion(seccionId) {
 
   
   <!-- Contenedor para el efecto de USDT -->
-  <a style="position:relative ;" href="javascript:void(0);" onclick="mostrarSeccion('plataformas2')" class="sidebar__link"><div class="image-container" style="position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; animation: pulse-usdt 2s infinite;">
+  <a style="position:relative ;" href="./zonausdt.php" class="sidebar__link"><div class="image-container" style="position: relative; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; animation: pulse-usdt 2s infinite;">
     <div style="position: absolute; width: 100%; height: 100%; background: rgba(0, 255, 137, 0.5); backdrop-filter: blur(10px);"></div>
     <img src="../img/TETHER.png" alt="Tether" style="width: 100%; height: auto; display: block; position: relative; z-index: 2;">
     <div class="neon-border" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 10px #00ff89, 0 0 20px #00ff89, 0 0 30px #00ff89, 0 0 40px #00ff59, 0 0 70px #00ff59; z-index: 1;"></div>

@@ -70,19 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alias'], $_POST['token
         echo "Error: " . $stmt->error;
     }
 }
-
-
-
-require_once __DIR__ . '/../Funciones/mostrarBancosUsuario.php';
-
-// Recupera el ID del usuario de la sesión
-$userId = $_SESSION['user_id'];
-
-// Llamamos a la función para obtener la salida de los bancos
-$htmlBancos = mostrarBancosUsuario($pdo, $userId);
-
-// Ahora puedes usar $htmlBancos donde necesites mostrar los bancos.
-?>
 ?>
 
 <!DOCTYPE html>
@@ -141,8 +128,8 @@ function mostrarSeccion(seccionId) {
 
 
   </script>
-<!--=============== SIDEBAR ===============-->
-<div class="sidebar" id="sidebar">
+  <!--=============== SIDEBAR ===============-->
+  <div class="sidebar" id="sidebar">
     <nav class="sidebar__container">
       <div class="sidebar__logo" style="width: 200px;">
         <img src="../img/cohete06.png" style="width: 180px; margin-left:-12px" alt="">
@@ -242,506 +229,7 @@ function mostrarSeccion(seccionId) {
 
 
 
-
-         
-
-
-
-
-
-  
-
-
-      <div class="body section" id="bancos-registrados">
-
-
-        <!-- MAIN INICIO -->
-        <main class="main" id="main_inicio">
-
-          <!-- COL-1 -->
-          <div class="main__col-1">
-
-            <!-- HEADING -->
-            <div>
-              <h2 class="main__heading"><span style="background: linear-gradient(to bottom, hsl(70, 6%, 21%), hsl(300, 3%, 6%)); box-shadow: 0 2px 12px hsla(247, 88%, 70%, .3)">
-                  <img src="./img/coheteLogoBlanco.png" alt="" height="50rem">
-                </span><?php echo $_SESSION['username']; ?></h2>
-              <p class="main__desc" style="font-size: 50px;"><?php echo $miBilletera1; ?></p>
-              <p class="main__sub" style="font-size: 25px;"><span>COP:</span> <span>Pesos Colombianos</span></p>
-            </div>
-
-
-            <!-- LIST -->
-            <div class="main__list-heading-wrap">
-              <h2 class="main__list-heading ss-heading" style="font-size: 25px;">Mi Estudio</h2>
-              <a href="#" class="ss-show"></a>
-            </div>
-
-            <ul class="main__list">
-
-              <li class="main__list-item">
-                <div class="main__list-item-image">
-                <img src="./spaceModels.png" width="40px" alt="">
-                </div>
-                <div class="main__list-content-wrap">
-                  <p class="main__list-content">Space Models</p>
-                  <p class="main__list-sub" style="margin-top: 5px; font-size: 10px !important">Cucuta - Bucaramanga - Medellin</p>
-
-                </div>
-              </li>
-
-              <div class="main__list-heading-wrap">
-                <h1>En esta seccion estan los bancos que haz agregado para recibir tu dinero. Recuerda que tokenautas.com te permite recibir pagos el cualquier cuenta bancaria, personal o de un tercero.</h1>
-                </li>
-
-
-
-
-
-
-
-
-
-
-
-
-            </ul>
-
-          </div>
-
-          <!-- COL-2 -->
-          <div class="main__col-2">
-
-
-            <!-- CROSSING -->
-            <div class="main__crossing-container">
-          
-              <div class="main__crossing-current">
-          
-                <h3 class="main__crossing-heading" style="font-size:25px;  font-weight: bold;">
-                  MIS BANCOS
-                </h3>
-              </div>
-            </div>
-
-
-
-
-            <style>
-              .main__discover--responsive {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Este es el espacio entre las tarjetas */
-  justify-content: center; /* Centra las tarjetas en el contenedor */
-  padding: 20px; /* Un poco de espacio alrededor del contenedor */
-}
-
-.banco-registrado--responsive {
-  background-color: #fff; /* Fondo blanco para las tarjetas */
-  border-radius: 8px; /* Bordes redondeados para suavidad */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
-  padding: 20px; /* Espacio dentro de las tarjetas */
-  width: 300px; /* Ancho fijo para todas las tarjetas */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-  margin-bottom: 20px; /* Espacio adicional en la parte inferior si se apilan */
-}
-
-.banco-registrado--responsive p {
-  margin: 5px 0; /* Espacio vertical entre párrafos */
-  color: #333; /* Color oscuro para el texto */
-}
-
-            </style>
-
-
-
-<style>
-/* Estilos personalizados para la sección de bancos */
-.discover-banks-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  overflow-y: auto;
-  max-height: calc(100vh - 200px);
-  padding: 10px;
-}
-
-.bank-card {
-  background: #2c3e50;
-  color: #ecf0f1;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  min-width: 250px;
-  max-width: calc(33% - 20px);
-  box-sizing: border-box;
-}
-
-.bank-card p {
-  margin: 5px 0;
-}
-
-/* Estilos personalizados para la barra de desplazamiento de la sección de bancos */
-.discover-banks-container::-webkit-scrollbar {
-  width: 12px;
-}
-
-.discover-banks-container::-webkit-scrollbar-track {
-  background: #34495e;
-  border-radius: 10px;
-}
-
-.discover-banks-container::-webkit-scrollbar-thumb {
-  background-color: #ecf0f1;
-  border-radius: 10px;
-  border: 3px solid #34495e;
-}
-
-.discover-banks-container::-webkit-scrollbar-thumb:hover {
-  background: #bdc3c7;
-}
-
-/* Estilos para Firefox */
-.discover-banks-container {
-  scrollbar-width: thin;
-  scrollbar-color: #ecf0f1 #34495e;
-}
-
-
-
-
-</style>
-
-
-
-            <!-- DISCOVER -->
-            <div class="main__discover" style="display: flex;">
-
-            <div class="discover-banks-container">
-  <?php echo $htmlBancos; ?>
-</div>
-
-
-
-
-            </div>
-
-            <!-- FOOTER -->
-            <footer class="main__footer">
-
-              <a href="#" class="main__footer-more ss-show">Leer normativa de www.tokenautas.com <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span></a>
-
-              <div class="main__info">
-                <a href="https://twitter.com/AbubakerSaeed96/status/1329417170368016385" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                </a>
-                <a href="https://github.com/AbubakerSaeed/dashboard-ui-n20" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                </a>
-                <a href="https://dribbble.com/shots/14615615-Dashboard-UI" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dribbble">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
-                  </svg>
-                </a>
-
-                <p class="main__cp" style="font-size: 1.4rem; text-align: center; ">
-                  Copyright &copy; <a href="https://twitter.com/AbubakerSaeed96" target="_blank" rel="noreferrer noopener" class="main__info-link" style="border-bottom: 1px solid  hsla(270, 10%, 50%, .4);">2024 by</a>
-                </p>
-
-                <p class="main__cr">
-                  <a href="https://activosdigitales.com.co" target="_blank" rel="noreferrer noopener">
-                    <img src="./img/logoCompletoBlanco.png" alt="" height="80rem">
-                  </a>
-                </p>
-              </div>
-
-            </footer>
-
-          </div>
-
-        </main>
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- HISTORIAL DE RETIROS-->
-
-      <div class="body section" id="historial-retiro">
-
-
-        <!-- MAIN INICIO -->
-        <main class="main" id="main_inicio">
-
-          <!-- COL-1 -->
-          <div class="main__col-1">
-
-            <!-- HEADING -->
-            <div>
-              <h2 class="main__heading"><span style="background: linear-gradient(to bottom, hsl(70, 6%, 21%), hsl(300, 3%, 6%)); box-shadow: 0 2px 12px hsla(247, 88%, 70%, .3)">
-                  <img src="./img/coheteLogoBlanco.png" alt="" height="50rem">
-                </span><?php echo $_SESSION['username']; ?></h2>
-              <p class="main__desc" style="font-size: 50px;">$<?php echo $miBilletera1; ?></p>
-              <p class="main__sub" style="font-size: 25px;"><span>COP:</span> <span>Pesos Colombianos</span></p>
-            </div>
-
-
-            <!-- LIST -->
-            <div class="main__list-heading-wrap">
-              <h2 class="main__list-heading ss-heading" style="font-size: 25px;">Mi Estudio</h2>
-              <a href="#" class="ss-show"></a>
-            </div>
-
-            <ul class="main__list">
-
-              <li class="main__list-item">
-                <div class="main__list-item-image">
-                  <img src="./spaceModels.png" width="40px" alt="">
-                </div>
-                <div class="main__list-content-wrap">
-                  <p class="main__list-content">Space Models</p>
-                  <p class="main__list-sub" style="margin-top: 5px; font-size: 10px !important">Cucuta - Bucaramanga - Medellin</p>
-
-                </div>
-              </li>
-
-              <div class="main__list-heading-wrap">
-                <h1>En esta seccion puedes visualizar los retiros que haz realizado a tus bancos registrados. Por favor fijate en el estado que cambiara de "Pendiente" a "Aprobado" cuando hallamos depositado tus fondos.</h1>
-                </li>
-
-
-            </ul>
-
-          </div>
-
-          <!-- COL-2 -->
-          <div class="main__col-2">
-
-
-            <!-- CROSSING -->
-            <div class="main__crossing-container">
-           
-              <div class="main__crossing-current">
-            
-                <h3 class="main__crossing-heading" style="font-size:25px;  font-weight: bold;">
-                  HISTORIAL DE RETIRO
-                </h3>
-              </div>
-            </div>
-
-
-
-<style>
-
-.historial-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Puedes ajustar el espacio entre cartas */
-  overflow-y: auto;
-  max-height: 200px; /* Ajusta esto según necesites */
-  padding: 10px;
-}
-
-.historial-card {
-  background: #2c3e50; /* Un color oscuro para combinar con tu tema */
-  color: #ecf0f1; /* Un color claro para el texto */
-  border-radius: 10px; /* Esquinas redondeadas */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
-  min-width: 250px; /* Ancho mínimo de cada tarjeta */
-  max-width: calc(50% - 20px); /* Ancho máximo para 2 cartas por fila, ajusta el gap si cambias esto */
-}
-
-.historial-card p {
-  margin: 5px 0; /* Asegúrate de que los párrafos no estén muy juntos */
-}
-
-
-/* Estiliza la barra de desplazamiento para todo el contenedor */
-.historial-container::-webkit-scrollbar {
-  width: 12px; /* Ancho de la barra de desplazamiento */
-}
-
-/* Estilo para la "track" (la parte por donde se desliza el "thumb") */
-.historial-container::-webkit-scrollbar-track {
-  background: #34495e; /* Un tono ligeramente más claro que el fondo del contenedor */
-  border-radius: 10px; /* Bordes redondeados para la track */
-}
-
-/* Estilo para el "thumb" (la parte que se mueve de la barra de desplazamiento) */
-.historial-container::-webkit-scrollbar-thumb {
-  background-color: #ecf0f1; /* Color de tu elección para el thumb */
-  border-radius: 10px; /* Bordes redondeados para el thumb */
-  border: 3px solid #34495e; /* Borde sólido con el color del fondo de la track */
-}
-
-/* Estilo para el estado "hover" del thumb */
-.historial-container::-webkit-scrollbar-thumb:hover {
-  background: #bdc3c7; /* Un color un poco más claro cuando se pasa el ratón por encima */
-}
-
-
-
-</style>
-
-
-
-            <!-- DISCOVER -->
-            <div class="main__discover" style="">
-
-              <div class="main__discover-heading-container">
-                <h3 class="main__discover-heading ss-heading">Historial</h3>
-                <a href="#" class="ss-show"></a>
-              </div>
-              <div style="overflow-y: scroll; height: 200px;" class="historial-container">
-                <?php
-                // Asumiendo que $userId es el ID del usuario logueado
-                $stmt = $conn->prepare("SELECT retiros.valor_retirar, retiros.identificador_transaccion, retiros.fecha_hora, retiros.estado, bancos_usuarios.nombre_banco, bancos_usuarios.tipo_cuenta FROM retiros INNER JOIN bancos_usuarios ON retiros.banco_id = bancos_usuarios.banco_id WHERE retiros.user_id = ? ORDER BY retiros.fecha_hora DESC");
-                $stmt->bind_param("i", $userId);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                while ($row = $result->fetch_assoc()) {
-                  echo "<div class='historial-card'>";
-                  echo "<p>Banco: " . htmlspecialchars($row['nombre_banco'], ENT_QUOTES, 'UTF-8') . "</p>";
-                  echo "<p>Tipo de Cuenta: " . htmlspecialchars($row['tipo_cuenta'], ENT_QUOTES, 'UTF-8') . "</p>";
-                  echo "<p>Monto: " . htmlspecialchars($row['valor_retirar'], ENT_QUOTES, 'UTF-8') . "</p>";
-                  echo "<p>Identificador Transacción: " . htmlspecialchars($row['identificador_transaccion'], ENT_QUOTES, 'UTF-8') . "</p>";
-                  echo "<p>Estado: " . htmlspecialchars($row['estado'], ENT_QUOTES, 'UTF-8') . "</p>"; // Agrega esta línea para mostrar el estado
-                  echo "<p>Fecha: " . htmlspecialchars($row['fecha_hora'], ENT_QUOTES, 'UTF-8') . "</p>";
-                  echo "</div>";
-                }
-                $stmt->close();
-                ?>
-              </div>
-
-
-            </div>
-
-            <!-- FOOTER -->
-            <footer class="main__footer">
-
-              <a href="#" class="main__footer-more ss-show">Leer normativa de www.tokenautas.com <span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span></a>
-
-              <div class="main__info">
-                <a href="https://twitter.com/AbubakerSaeed96/status/1329417170368016385" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter">
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                </a>
-                <a href="https://github.com/AbubakerSaeed/dashboard-ui-n20" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                </a>
-                <a href="https://dribbble.com/shots/14615615-Dashboard-UI" target="_blank" rel="noreferrer noopener" class="main__info-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dribbble">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
-                  </svg>
-                </a>
-
-                <p class="main__cp" style="font-size: 1.4rem; text-align: center; ">
-                  Copyright &copy; <a href="https://twitter.com/AbubakerSaeed96" target="_blank" rel="noreferrer noopener" class="main__info-link" style="border-bottom: 1px solid  hsla(270, 10%, 50%, .4);">2024 by</a>
-                </p>
-
-                <p class="main__cr">
-                  <a href="https://activosdigitales.com.co" target="_blank" rel="noreferrer noopener">
-                    <img src="./img/logoCompletoBlanco.png" alt="" height="80rem">
-                  </a>
-                </p>
-              </div>
-
-            </footer>
-
-          </div>
-
-        </main>
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -788,20 +276,30 @@ function mostrarSeccion(seccionId) {
     <!-- HEADING -->
     <div>
       <h2 class="main__heading"><span style="background: linear-gradient(to bottom, hsl(70, 6%, 21%), hsl(300, 3%, 6%)); box-shadow: 0 2px 12px hsla(247, 88%, 70%, .3)">
-          <img src="./img/coheteLogoBlanco.png" alt="" height="50rem">
+          <img src="../img/coheteLogoBlanco.png" alt="" height="50rem">
         </span><?php echo $_SESSION['username']; ?></h2>
-      <p class="main__desc" style="font-size: 50px;">BITCOIN</p>
-      <p class="main__sub" style="font-size: 25px;"><span>RED:</span> <span>TRC20</span></p>
+      <p class="main__desc" style="font-size: 50px;">USDT</p>
+      <p class="main__sub" style="font-size: 25px;"><span>RED:</span> <span>TETHER</span></p>
     </div>
+
+    <?php
+
+    // Ejecuta las funciones y almacena los resultados
+$imagenesUsuario = getUserImages($userId, $pdo);
+$valorWalletBTC = obtenerValorWalletBTC($userId, $pdo);
+$valorWalletUSDT = obtenerValorWalletUSDT($userId, $pdo);
+
+// Verifica si las claves existen en el array antes de intentar acceder a ellas
+$imagenUSD = isset($imagenesUsuario['imagenusdt']) ? $imagenesUsuario['imagenusdt'] : '';
+$imagenBTC = isset($imagenesUsuario['imagenbtc']) ? $imagenesUsuario['imagenbtc'] : '';
+?>
 
 
     <!-- LIST -->
     <div class="main__list-heading-wrap">
              <div id="johan" class="modal-bitcoin" >  <!-- OJO -->
                 <div class="image-container" onmouseover="showModal('btcModal')" onmouseout="hideModal('btcModal')">
-                  <?php if ($images && $images['image_path_btc']) { ?>
-                    <img src="<?php echo $images['image_path_btc']; ?>" alt="Wallet BTC">
-                  <?php } ?>
+                <p>Imagen USD: <img src="<?php echo '../' . htmlspecialchars($imagenUSD); ?>" alt="Imagen USD"></p>
                 </div>
        
               </div>
@@ -811,7 +309,7 @@ function mostrarSeccion(seccionId) {
 
     <li class="main__list-item">
     <div class="main__list-item-image" style="cursor: pointer;" onclick="copiarAlPortapapeles(this)">
-      <img src="./img/copiar.png" width="40px" alt="">
+      <img src="../img/copiar.png" width="40px" alt="">
     </div>
     <div class="main__list-content-wrap">
       <p class="main__list-content"><?php echo $valorWalletBTC; ?></p>

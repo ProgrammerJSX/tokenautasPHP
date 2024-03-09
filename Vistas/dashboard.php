@@ -139,37 +139,38 @@ function mostrarSeccion(seccionId) {
         <div class="sidebar__list">
           <h3 class="sidebar__title">
 
-
+  <!--=============== Inicio : dashboard.php===============-->
                     <a href="./dashboard.php" class="sidebar__link">
-
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Inicio</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Inicio</span></a>
 
 
 
-
+  <!--=============== Retirar: retirar.php ===============-->
           <a href="./retirar.php" class="sidebar__link">
-
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Retirar</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Retirar</span></a>
 
-
+  <!--=============== Depositar: depositar.php ===============-->
             <a href="./depositar.php"  class="sidebar__link">
-
+  <!--===============  ===============-->
 <span class="sidebar__link-name" style="font-size: 12px;">Depositar</span>
 <span class="sidebar__link-floating" style="font-size: 12px;">Depositar</span></a>
 
 
-
-          <a href="javascript:void(0);" onclick="mostrarSeccion('bancos-registrados')" class="sidebar__link">
-
+  <!--=============== Mis bancos:  misbancos.php===============-->
+  <a href="./misbancos.php"  class="sidebar__link">
+  <!--===============  ===============-->
             <span class="sidebar__link-name" style="font-size: 12px;">Mis Bancos</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Mis Bancos</span>
           </a>
 
 
-
-          <ahref="javascript:void(0);" onclick="mostrarSeccion('registrar-bancos')" class="sidebar__link">
+  <!--=============== Registrar Bancos:  registrarBancos.php===============-->
+  <a href="./registrarBancos.php"  class="sidebar__link">
+  <!--===============  ===============-->
 
             <span class="sidebar__link-name" style="font-size: 12px;">Registrar Bancos</span>
             <span class="sidebar__link-floating" style="font-size: 12px;">Registar Bancos</span>
@@ -188,29 +189,20 @@ function mostrarSeccion(seccionId) {
 
       </div>
 
-      <h3 class="sidebar__title">
-        <span>Historial</span>
-      </h3>
+
 
       <div class="sidebar__list">
-        <a href="javascript:void(0);" onclick="mostrarSeccion('historial-retiro')" class="sidebar__link">
 
+
+  <!--=============== Historial de retiro:  historialderetiro.php===============-->
+  <a href="./historialderetiro.php"  class="sidebar__link">
+  <!--===============  ===============-->
           <span class="sidebar__link-name" style="font-size: 12px;">Historial de Retiro</span>
           <span class="sidebar__link-floating" style="font-size: 12px;">Historial de Retiro</span>
         </a>
 
 
 
-
-
-
-
-
-        <!--===============
-                  <a href="javascript:void(0);" class="sidebar__link" onclick="mostrarSeccion('historial-deposito')" >
-                    <span class="sidebar__link-name" style="font-size: 12px;">Historial Deposito</span>
-                    <span class="sidebar__link-floating" style="font-size: 12px;">Historial Deposito</span></a>
-                 ===============-->
 
         <h3 class="sidebar__title">
           <span>Usuario</span>
@@ -226,6 +218,8 @@ function mostrarSeccion(seccionId) {
 
   </nav>
   </div>
+
+  
 
   <!--=============== MAIN ===============-->
   <!--=============== MAIN ===============-->

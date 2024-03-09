@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 $host = 'localhost';
 $db = 'u491711087_mibasededatos';
 $user = 'u491711087_johan';
@@ -22,10 +22,8 @@ try {
 
 
 
-*/
 
-
-
+/*
 
 
 $host = 'localhost';
@@ -46,6 +44,11 @@ try {
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+
+*/
+
+
+
 
 
 ?>
