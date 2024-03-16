@@ -70,7 +70,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['alias'], $_POST['token
         echo "Error: " . $stmt->error;
     }
 }
+
+// Redirección basada en el tipo de dispositivo
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+$isMobile = preg_match('/Mobile|Android|BlackBerry|iPhone|Windows Phone/i', $userAgent);
+
+// Si es un dispositivo móvil, redirigir a la vista para celulares
+if ($isMobile) {
+    header("location: dashboardVistaCelular.php");
+    exit;
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <!-- Aquí va el resto de tu código de encabezado -->
+</head>
+<body>
+    <!-- Contenido del dashboard para tablets/computadoras -->
+    <!-- Incluye aquí el contenido que deseas mostrar en tablets/computadoras -->
+</body>
+</html>
+
 
 <!DOCTYPE html>
 <html lang="en">

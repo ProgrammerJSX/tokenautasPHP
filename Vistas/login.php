@@ -10,11 +10,34 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['mensaje'])) {
-    echo "<p>" . $_SESSION['mensaje'] . "</p>";
-    unset($_SESSION['mensaje']);
+if (isset($_SESSION['usuario_logueado']) && $_SESSION['usuario_logueado'] === true) {
+    // Usuario logueado, insertamos el código JS para redirección
+    echo "<script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            var anchoPantalla = window.innerWidth;
+            if(anchoPantalla < 768) {
+                // Redireccionar a las vistas para celulares
+                window.location.href = '/vistas_celular/dash/dashboardVistaCelular.php';
+            } else {
+                // Redireccionar a las vistas para tablets/computadoras
+                window.location.href = '/vistas/dashboard.php';
+            }
+        });
+    </script>";
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Aquí iría el resto de tu cabecera -->
+</head>
+<body>
+    <!-- El resto de tu HTML va aquí -->
+</body>
+</html>
+
 
 
 <!DOCTYPE html>
@@ -74,6 +97,7 @@ if (isset($_SESSION['mensaje'])) {
                         <!-- Cambio aquí: reemplazo el botón de Sign Up por un enlace -->
                  
                     </div>
+                    <input type="hidden" id="anchoPantalla" name="anchoPantalla" value="">
 
                     <a href="./registro.php" class="login__forgot" style="color: #1c0e2a;">No tienes cuenta? Registrate Aqui!</a>
                 </div>
@@ -112,6 +136,12 @@ const showHiddenPass = (inputPass, inputIcon) =>{
 
 showHiddenPass('input-pass','input-icon')
     </script>
+
+
+<script>
+    // Capturar el ancho de la pantalla del dispositivo y actualizar el campo oculto anchoPantalla
+    document.getElementById('anchoPantalla').value = window.innerWidth;
+</script>
 
     <style>
         @charset "UTF-8";

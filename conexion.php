@@ -1,5 +1,6 @@
 <?php
 
+/*
 
 $host = 'localhost';
 $db = 'u491711087_mibasededatos';
@@ -20,10 +21,10 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+*/
 
 
 
-/*
 
 
 $host = 'localhost';
@@ -45,7 +46,6 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-*/
 
 
 
